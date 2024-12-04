@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DANA Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+</head>
+<body>
+
+
+
+<header>
+    <div class="nav">
+        <a href="#" class="logo">DANA Store</a>
+        <form>
+            <input type="text" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+        <div class="cart-icon" onclick="toggleCart()">
+            <img src="image/Shopping cart.png" alt="Cart">
+            <span class="cart-count" id="cart-count">0</span>
+        </div>
+    </div>
+</header>
+
+<!-- Promotion Slider -->
+<div class="promotion-slider">
+    <div class="slider-container" id="slider-container">
+        <div class="slider-item"><img src="image/promotion1.png" alt="Promo 1"></div>
+        <div class="slider-item"><img src="image/promotion1.png" alt="Promo 2"></div>
+        <div class="slider-item"><img src="image/promotion1.png" alt="Promo 3"></div>
+        <div class="slider-item"><img src="image/promotion1.png" alt="Promo 3"></div>
+    </div>
+    <div class="slider-nav">
+        <button class="prev-btn" onclick="moveSlide(-1)">❮</button>
+        <button class="next-btn" onclick="moveSlide(1)">❯</button>
+    </div>
+</div>
+
+<!-- Shop Section -->
+<div class="shop">
+    <div class="section-title">Our Products</div>
+    <div class="shop-content">
+        <div class="product-box" data-product-id="1">
+            <img src="image/2.png" alt="Product 1" class="product-image">
+            <div class="product-title">Product 1</div>
+            <div class="price">$2.99</div>
+            <button class="add-cart" onclick="addToCart(1, 'Product 1', 2.99)">Add to Cart</button>
+        </div>
+        <div class="product-box" data-product-id="2">
+            <img src="image/4.png" alt="Product 2" class="product-image">
+            <div class="product-title">Product 2</div>
+            <div class="price">$2.99</div>
+            <button class="add-cart" onclick="addToCart(2, 'Product 2', 2.99)">Add to Cart</button>
+        </div>
+        <div class="product-box" data-product-id="3">
+            <img src="image/6.png" alt="Product 3" class="product-image">
+            <div class="product-title">Product 3</div>
+            <div class="price">$2.99</div>
+            <button class="add-cart" onclick="addToCart(3, 'Product 3', 2.99)">Add to Cart</button>
+        </div>
+        <div class="product-box" data-product-id="4">
+            <img src="image/8.png" alt="Product 4" class="product-image">
+            <div class="product-title">Product 4</div>
+            <div class="price">$2.99</div>
+            <button class="add-cart" onclick="addToCart(4, 'Product 4', 2.99)">Add to Cart</button>
+        </div>
+        <div class="product-box" data-product-id="5">
+            <img src="image/10.png" alt="Product 5" class="product-image">
+            <div class="product-title">Product 5</div>
+            <div class="price">$2.99</div>
+            <button class="add-cart" onclick="addToCart(5, 'Product 5', 2.99)">Add to Cart</button>
+        </div>
+        <div class="product-box" data-product-id="6">
+            <img src="image/12.png" alt="Product 6" class="product-image">
+            <div class="product-title">Product 6</div>
+            <div class="price">$2.99</div>
+            <button class="add-cart" onclick="addToCart(6, 'Product 6', 2.99)">Add to Cart</button>
+        </div>
+        <div class="product-box" data-product-id="7">
+            <img src="image/12.png" alt="Product 7" class="product-image">
+            <div class="product-title">Product 7</div>
+            <div class="price">$2.99</div>
+            <button class="add-cart" onclick="addToCart(7, 'Product 7', 2.99)">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+   <!-- Cart Sidebar -->
+    <div class="cart-container" id="cart-container">
+        <h3>Your Cart</h3>
+        <ul class="cart-items" id="cart-items"></ul>
+        <div class="cart-total" id="cart-total">Total: $0.00</div>
+        <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+        <button class="checkout-btn" onclick="toggleCart()">Close</button>
+    </div>
+
+<!-- Checkout Section -->
+<div class="checkout-container" id="checkout-container">
+    
+    <h3>Checkout</h3>
+    <form class="checkout-form">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Your Name" required>
+        <label for="Number Phone">Number Phone</label>
+        <input type="text" id="Number Phone" placeholder="Your Number Phone" required>
+
+        <label for="address">Shipping Address</label>
+        <input type="text" id="address" placeholder="Your Address" required>
+        <label for="payment-method">Payment Method</label>
+        <select id="payment-method" required>
+            <option value="credit-card">Credit Card</option>
+            <option value="paypal">PayPal</option>
+        </select>
+        <div class="price-breakdown">
+            <p>Subtotal: $<span id="checkout-subtotal">0.00</span></p>
+            <p>Shipping: $<span id="checkout-shipping">2.00</span></p>
+            <p>Total: $<span id="checkout-total">0.00</span></p>
+        </div>
+        <button type="button" class="submit-btn" onclick="processPayment()">Pay Now</button>
+    </form>
+</div>
+
+
+<!-- Confirmation Modal -->
+<div id="confirmation-modal" class="confirmation-modal" onclick="closeModal()">
+    <div class="confirmation-modal-content">
+        <h3>Thank you for your purchase!</h3>
+        <button onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <h2>MyShop</h2>
+        </div>
+        <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+
+
+            
+        <ul class="social-icons">
+            <li><a href="https://www.facebook.com/yourprofile" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://www.instagram.com/yourprofile" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://t.me/yourprofile" target="_blank" class="social-icon telegram"><i class="fab fa-telegram-plane"></i></a></li>
+        </ul>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+</body>
+</html>

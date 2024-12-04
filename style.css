@@ -1,0 +1,838 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+    transition: background-color 0.3s ease;
+}
+
+/* Header */
+header {
+    background: linear-gradient(45deg, #ff6f61, #ff4c3b);
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+
+/* Product Hover Effect */
+.product-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.product-box .add-cart {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-box:hover .add-cart {
+    opacity: 1;
+}
+
+/* Sticky Cart Sidebar */
+.cart-container {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 999;
+}
+
+/* Checkout Section */
+.checkout-container .price-breakdown {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.checkout-container .submit-btn {
+    background-color: #ff6f61;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.checkout-container .submit-btn:hover {
+    background-color: #e05a4f;
+}
+
+header.sticky {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+
+#map {
+    height: 500px; /* Adjust map height */
+    width: 100%;   /* Full width */
+}
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+form {
+    display: flex;
+    width: 40%;
+}
+
+form input {
+    padding: 10px;
+    width: 80%;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+form input:focus {
+    border-color: #ff6f61;
+}
+
+form button {
+    background-color: #ffffff;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 20px;
+    color: rgb(34, 34, 34);
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: #faa198;
+}
+
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff6f61;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+/* Promotion Slider */
+.promotion-slider {
+    position: relative;
+    margin: 30px 0;
+}
+
+.slider-container {
+    display: flex;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
+
+.slider-item img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.prev-btn, .next-btn {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Shop Section */
+.shop {
+    margin: 30px auto;
+    width: 80%;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.shop-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.product-box {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.product-box:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.product-title {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 20px;
+    color: #ff6f61;
+    margin-bottom: 10px;
+}
+
+.add-cart {
+    background-color: #ff6f61;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-cart:hover {
+    background-color: #e05a4f;
+}
+
+/* Cart Sidebar */
+.cart-container {
+    position: fixed;
+    top: 0;
+    right: -350px; /* Initially hidden off-screen */
+    width: 350px;  /* Set a more standard width */
+    height: 100%;
+    background-color: #ffffff; /* Use white background for contrast */
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.15); /* Deeper shadow for better depth */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: right 0.3s ease;
+    z-index: 999;
+    border-radius: 12px 0 0 12px; /* Rounded corners for a softer look */
+}
+
+/* Cart Title */
+.cart-container h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: #333;
+    border-bottom: 2px solid #ff6f61; /* Subtle color accent */
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Cart Items */
+.cart-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    gap: 20px;  /* Increased gap between items */
+}
+
+/* Cart Item Styling */
+.cart-items li {
+    display: flex;
+    justify-content: space-between;  /* Align item elements to the ends */
+    align-items: center;
+    width: 100%;
+    max-width: 320px;  /* Increased max width */
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #f5f5f5;  /* Light background for items */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for items */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Item Hover Effect */
+.cart-items li:hover {
+    background-color: #f0f0f0;  /* Slight hover effect */
+    transform: scale(1.02);  /* Slight zoom effect on hover */
+}
+
+/* Item Details */
+.cart-items li .item-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-right: 12px;
+    flex-grow: 1;
+}
+
+.cart-items li .item-price {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ff6f61;
+    margin-right: 12px;
+}
+
+.cart-items li .item-quantity {
+    font-size: 16px;
+    font-weight: 500;
+    color: #777;
+    margin-right: 12px;
+}
+
+/* Remove Button */
+.cart-items li .remove-btn {
+    background-color: #ff6f61;  /* Soft coral background */
+    padding: 10px 20px;  /* Increase padding for a more clickable appearance */
+    border: 2px solid #ff6f61;  /* Border to match background */
+    border-radius: 50px;  /* Make the button pill-shaped */
+    color: white;  /* White text for contrast */
+    font-size: 16px;  /* Larger text for readability */
+    font-weight: 600;  /* Bold text for emphasis */
+    text-transform: uppercase;  /* Uppercase letters for a stronger look */
+    cursor: pointer;
+    transition: all 0.3s ease;  /* Smooth transition for hover effects */
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* Center text horizontally */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+}
+
+/* Remove Button Hover Effect */
+.cart-items li .remove-btn:hover {
+    background-color: #e05a4f;  /* Darker coral background */
+    border-color: #e05a4f;  /* Darker border to match */
+    transform: scale(1.05);  /* Slight scale effect on hover */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);  /* Enhanced shadow on hover */
+}
+
+/* Remove Button Focus Effect */
+.cart-items li .remove-btn:focus {
+    outline: none;  /* Remove default focus outline */
+    box-shadow: 0 0 10px rgba(255, 111, 97, 0.6);  /* Custom focus shadow */
+}
+
+
+/* Cart Total */
+.cart-total {
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Checkout Button */
+.checkout-btn, .checkout-btn-close {
+    background-color: #ff6f61;
+    padding: 14px;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effects for Buttons */
+.checkout-btn:hover, .checkout-btn-close:hover {
+    background-color: #e05a4f;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.checkout-btn-close {
+    background-color: #ddd;
+    color: #333;
+}
+
+.checkout-btn-close:hover {
+    background-color: #ccc;
+}
+
+/* Empty Cart Message */
+.cart-empty {
+    text-align: center;
+    color: #888;
+    font-size: 16px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+
+
+/* Checkout Section */
+.checkout-container {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout-form label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.checkout-form input,
+.checkout-form select {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+}
+
+.submit-btn {
+    background-color: #ff6f61;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #e05a4f;
+}
+
+
+/* Sticky Cart Sidebar */
+.cart-container {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 999;
+}
+
+/* Checkout Section */
+.checkout-container .price-breakdown {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.checkout-container .submit-btn {
+    background-color: #ff6f61;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.checkout-container .submit-btn:hover {
+    background-color: #e05a4f;
+}
+/* Modal Styles */
+.confirmation-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmation-modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.confirmation-modal button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.confirmation-modal button:hover {
+    background-color: #e05a4f;
+}
+
+/* Footer */
+footer {
+    background-color: #ff4c3b;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap; /* Ensures items adjust properly on smaller screens */
+    justify-content: space-between; /* Keeps elements distributed with space between */
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    gap: 20px; /* Adds spacing between flex items */
+}
+
+.footer-logo h2 {
+    font-size: 28px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center; /* Center the links horizontally */
+    gap: 120px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Social Media Icons */
+.social-icons {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    
+}
+
+.social-icons li a {
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-icons li a:hover {
+    color: #ffd700;  /* Gold color for hover effect */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links {
+        margin-top: 15px;
+    }
+
+    .social-icons {
+        margin-top: 20px;
+    }
+}
+
+/* Responsive Styles */
+
+/* For iPhone Portrait */
+@media (max-width: 375px) {
+    .shop-content {
+        grid-template-columns: 1fr; /* Stacks items in a single column */
+        gap: 10px;
+    }
+
+    header {
+        padding: 10px 0; /* Reduce header padding */
+    }
+
+    .product-box {
+        padding: 15px;
+    }
+
+    .section-title {
+        font-size: 20px; /* Smaller font size for titles */
+    }
+
+    .cart-container {
+        width: 280px; /* Narrower cart sidebar for smaller screens */
+    }
+
+    .checkout-container {
+        width: 90%; /* Narrow checkout container */
+    }
+
+    form {
+        width: 70%; /* Adjust form input width */
+    }
+
+    footer {
+        padding: 20px 0;
+    }
+
+    .footer-links {
+        gap: 30px; /* Reduce gap between footer links */
+    }
+
+    .footer-links a {
+        font-size: 14px; /* Smaller font for footer links */
+    }
+
+    .social-icons li a {
+        font-size: 18px; /* Reduce social icons size */
+    }
+}
+
+/* For iPhone Landscape */
+@media (max-width: 667px) {
+    .shop-content {
+        grid-template-columns: 1fr 1fr; /* Two items per row */
+        gap: 15px;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .cart-container {
+        width: 320px;
+    }
+
+    .product-box {
+        padding: 18px;
+    }
+
+    .footer-links {
+        gap: 40px;
+    }
+
+    .footer-links a {
+        font-size: 16px;
+    }
+
+    .social-icons li a {
+        font-size: 20px;
+    }
+}
+
+/* For larger iPhones like iPhone X and above */
+@media (max-width: 812px) {
+    .shop-content {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+
+    .cart-container {
+        width: 350px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .product-box {
+        padding: 20px;
+    }
+
+    .footer-links {
+        gap: 50px;
+    }
+
+    .footer-links a {
+        font-size: 18px;
+    }
+
+    .social-icons li a {
+        font-size: 22px;
+    }
+}
+
+
+/* For Android Small (max-width: 360px) - e.g. Galaxy S3, Nexus 5 */
+@media (max-width: 360px) {
+    .search-form input {
+        width: 140px;  /* Smaller input field for smaller screens */
+    }
+
+    .search-form button {
+        padding: 8px 12px;  /* Smaller button */
+    }
+}
+
+/* For Android Medium (max-width: 480px) - e.g. Galaxy S5, Nexus 6, Galaxy A series */
+@media (max-width: 480px) {
+    .search-form input {
+        width: 160px;  /* Slightly larger input field */
+    }
+
+    .search-form button {
+        padding: 10px 14px;
+    }
+}
+
+/* For Android Large (max-width: 600px) - e.g. Galaxy S7, S8, Note series */
+@media (max-width: 600px) {
+    .search-form input {
+        width: 200px;  /* Standard input field for larger Android devices */
+    }
+
+    .search-form button {
+        padding: 12px 15px;
+    }
+}
+
+/* For Android Tablets (max-width: 800px) - e.g. Nexus 7, Samsung Tab */
+@media (max-width: 800px) {
+    .search-form input {
+        width: 250px;  /* Larger input field for tablets */
+    }
+
+    .search-form button {
+        padding: 12px 18px;
+    }
+}
+
+/* For larger Android Tablets & Devices (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .search-form input {
+        width: 300px;  /* Extra large input field for large tablets */
+    }
+
+    .search-form button {
+        padding: 14px 20px;
+    }
+}
+
+/* For Android Tablets in Landscape */
+@media (max-width: 1024px) and (orientation: landscape) {
+    .search-form input {
+        width: 350px;  /* Adjust for larger screen landscape */
+    }
+
+    .search-form button {
+        padding: 14px 22px;
+    }
+}
+
+/* For Android Large Tablets and Phablets */
+@media (max-width: 1280px) {
+    .search-form input {
+        width: 350px;  /* Standard size for large Android phablets */
+    }
+
+    .search-form button {
+        padding: 14px 20px;
+    }
+}
+
+/* For Android Devices 5.5" Screen and Larger */
+@media (min-width: 800px) and (max-width: 1280px) {
+    .search-form input {
+        width: 350px;  /* Larger size for bigger phones and phablets */
+    }
+
+    .search-form button {
+        padding: 15px 22px;
+    }
+}
+
+/* For Android Tablets and Small Laptops */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .search-form input {
+        width: 400px;  /* Extra wide input for tablet and small laptop screens */
+    }
+
+    .search-form button {
+        padding: 15px 24px;
+    }
+}
+
+/* For Android Devices in Landscape */
+@media (max-width: 1024px) and (orientation: landscape) {
+    .search-form input {
+        width: 400px;  /* Adjust input for landscape orientation */
+    }
+
+    .search-form button {
+        padding: 15px 24px;
+    }
+}
