@@ -147,11 +147,75 @@ form button:hover {
     font-weight: bold;
 }
 
-/* Promotion Slider */
+/* Promotion Slider Container */
 .promotion-slider {
     position: relative;
-    margin: 30px 0;
+    width: 100%;
+    max-width: 1200px;  /* Maximum width of the slider */
+    margin: 0 auto;
+    overflow: hidden;  /* Hide overflowing content */
 }
+
+/* Slider Container */
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;  /* Smooth transition for sliding effect */
+}
+
+/* Slider Items */
+.slider-item {
+    min-width: 100%;  /* Each item takes full width */
+    transition: opacity 0.5s ease-in-out;  /* Smooth opacity transition */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-item img {
+    width: 100%;
+    height: auto;  /* Make images responsive */
+    object-fit: cover;  /* Ensure images cover the container without distortion */
+    border-radius: 8px;  /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);  /* Soft shadow around images */
+}
+
+/* Navigation Buttons */
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.slider-nav .prev-btn, .slider-nav .next-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    opacity: 0.8;
+}
+
+.slider-nav .prev-btn:hover, .slider-nav .next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 1;
+}
+
+/* Optional: Hide navigation buttons on mobile for better aesthetics */
+@media (max-width: 768px) {
+    .slider-nav .prev-btn, .slider-nav .next-btn {
+        font-size: 24px;
+        padding: 8px;
+    }
+}
+
 
 .slider-container {
     display: flex;
@@ -726,6 +790,60 @@ footer {
     }
 }
 
+/* For iPad Landscape and Tablets */
+@media (max-width: 1024px) {
+    .shop-content {
+        grid-template-columns: repeat(2, 1fr); /* Two items per row */
+        gap: 25px;
+    }
+
+    .cart-container {
+        width: 380px;
+    }
+
+    .footer-links {
+        gap: 60px;
+    }
+}
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+    .shop-content {
+        grid-template-columns: 1fr; /* Single column on smaller tablets and phones */
+        gap: 20px;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    .product-box {
+        padding: 15px;
+    }
+
+    .cart-container {
+        width: 300px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .footer-links a {
+        font-size: 16px;
+    }
+
+    .social-icons li a {
+        font-size: 18px;
+    }
+}
+
+
+
+
+/* Responsive Search Bar Adjustments */
 
 /* For Android Small (max-width: 360px) - e.g. Galaxy S3, Nexus 5 */
 @media (max-width: 360px) {
