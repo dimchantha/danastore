@@ -1,6 +1,35 @@
 let cart = [];
 
 
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slider-item');
+const totalSlides = slides.length;
+
+// Function to move to the next or previous slide
+function moveSlide(step) {
+    currentSlide += step;
+
+    // Ensure the slide index is within bounds
+    if (currentSlide < 0) {
+        currentSlide = totalSlides - 1;  // Go to the last slide if at the start
+    } else if (currentSlide >= totalSlides) {
+        currentSlide = 0;  // Go to the first slide if at the end
+    }
+
+    updateSlidePosition();
+}
+
+// Function to update the slide's position
+function updateSlidePosition() {
+    const sliderContainer = document.getElementById('slider-container');
+    const offset = -currentSlide * 100;  // Move the slider by 100% for each slide
+    sliderContainer.style.transform = `translateX(${offset}%)`;  // Apply the translation
+}
+
+// Auto-change slide every 5 seconds
+setInterval(() => {
+    moveSlide(1);  // Automatically move to the next slide
+}, 5000);  // Change slide every 5 seconds (5000ms)
 
 
 // On page load, load the cart from localStorage and update the cart preview
